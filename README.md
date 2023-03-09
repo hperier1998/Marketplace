@@ -24,8 +24,9 @@ The project has the following elements :
      - Function delivered() - Changes the current shipping status to 'delivery'. Only the contract owner can call this.
      - Function getStatus() - Returns the current shipping status. Only the contract owner can call this.
      - Function checkStatus() - Returns the current shipping status but requires a pay fee. Only the contract customer can call this.
+     - Function convertStatusToString() - Returns the shipping status as string.
 7. Contract deployed on Mumbai.
 
 ## Deployed Smart Contract
 This is the link to the deployed smart contract:
-https://mumbai.polygonscan.com/address/0x53e12432bd6707ef37eeec914841c6e432eb1a6c
+https://mumbai.polygonscan.com/address/0x59a69891ed8c95978c2054124b5bf360ca5f69fc
