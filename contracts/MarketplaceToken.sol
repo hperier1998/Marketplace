@@ -1,15 +1,15 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
+// Enum to list the possible shipping statuses
+enum ShippingStatus { 
+    Pending, 
+    Shipped, 
+    Delivered 
+}
+
 contract MarketplaceToken {
     
-    // Enum to list the possible shipping statuses
-    enum ShippingStatus { 
-        Pending, 
-        Shipped, 
-        Delivered 
-    }
-
     // Private state variable to store the current shipping status
     ShippingStatus private status;
 
@@ -71,8 +71,8 @@ contract MarketplaceToken {
     * View to restrict it to view-only (read-only)
     * Restricted to owner call only via the modifier ownerOnly
     */
-    function getStatus() public view ownerOnly returns (ShippingStatus) {
-        return status;
+    function getStatus() public view ownerOnly returns (string memory) {
+        return convertStatusToString();
     }
 
     /**
@@ -80,8 +80,23 @@ contract MarketplaceToken {
     * Restricted to the customer who made the order via the modifier customerOnly
     * Requires payment of ether to access this information
     */
-    function checkStatus() public customerOnly payable returns (ShippingStatus) {
+    function checkStatus() public customerOnly payable returns (string memory) {
         require(msg.value > 0, "Please pay to check the status of your order");
-        return status;
+        return convertStatusToString();
+    }
+
+    /**
+    * Function used to convert the shippingstatus status into a string value
+    */
+    function convertStatusToString() private view returns (string memory) {
+        if (status == ShippingStatus.Pending) {
+            return "Pending";
+        } else if (status == ShippingStatus.Shipped) {
+            return "Shipped";
+        } else if (status == ShippingStatus.Delivered) {
+            return "Delivered";
+        }
+
+        return "Invalid status"; // Return an error message if status is not recognized
     }
 }
