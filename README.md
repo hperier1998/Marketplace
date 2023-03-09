@@ -30,3 +30,6 @@ The project has the following elements :
 ## Deployed Smart Contract
 This is the link to the deployed smart contract:
 https://mumbai.polygonscan.com/address/0x59a69891ed8c95978c2054124b5bf360ca5f69fc
+
+## Documentations:
+Truffle deploy on Mumbai : https://wiki.polygon.technology/docs/develop/truffle/
