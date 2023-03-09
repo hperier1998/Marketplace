@@ -35,8 +35,9 @@ https://mumbai.polygonscan.com/address/0x59a69891ed8c95978c2054124b5bf360ca5f69f
 1. Install truffle : **npm install -g truffle**
 2. Move to the project directory : **cd _projectname_**
 3. Install the truffle modules : **truffle unbox _projectname_**
-4. Compile the project : **truffle compile**
-5. Deploy on Mumbai : **truffle deploy --network matic**
+4. Create a .secret file in the root directory with your 12-word mnemonic phrase (secret phrase).
+5. Compile the project : **truffle compile**
+6. Deploy on Mumbai : **truffle deploy --network matic**
 
 ## Documentations:
 Truffle deploy on Mumbai : https://wiki.polygon.technology/docs/develop/truffle/
